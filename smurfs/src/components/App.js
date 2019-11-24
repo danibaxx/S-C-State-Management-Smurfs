@@ -1,25 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from 'react-router-dom';
+import axios from 'axios';
 
 // context
-import { SmurfContext } from "./context/SmurfContext";
+import { SmurfContext } from "../context/SmurfContext";
 
 // components
-import Header from './Header';
-import Nav from './Nav';
-import Smurf from './Smurf';
-import SmurfForm from "./SmurfForm";
+import Header from './Title/Header';
+import Smurf from '../Smurfs/Smurf';
+import SmurfForm from "../Smurfs/SmurfForm";
 
 import "./App.css";
 
 const App = () => {
-  const [smurfs] = useState();
+  const [smurfs, setSmurfs] = useState([]);
+  console.log('APP', smurfs)
+
+  useEffect(() => {
+    axios
+    .get('http://localhost:3333/smurfs')
+    .then(result => {
+      setSmurfs(result.data)
+      console.log('useEffect', result.data)
+    })
+    .catch(error => {
+      console.log("GET ERROR", error)
+    })
+  }, [])
+
+  // const addSmurfs = () => {
+  //   setSmurfs()
+  // }
 
   return (
     <SmurfContext.Provider value={smurfs}>
       <div className="App">
-        <Nav />
         <Header />
+
+        {/* Routes */}
         <Route exact path='/smurfs' component={Smurf} />
         <Route exact path='/addsmurf' component={SmurfForm} />
       </div>

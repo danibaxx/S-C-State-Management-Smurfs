@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
@@ -20,9 +20,65 @@
 
 .App-intro {
   font-size: large;
-}
+} */
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.App {
+  text-align: center;
+  background-image: url('../bg_sm_vill.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.links h3 {
+  display: flex;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 35px;
+}
+
+h1 {
+  text-shadow: 1px 1px 5px whitesmoke;
+  color: dodgerblue;
+  font-size: 60px;
+}
+
+h3 {
+  color: red;
+  text-shadow: 1px 1px 5px black;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+p {
+  text-shadow: 1px 1px 5px black;
+  color: #d26f2d;
+  font-size: 27px;
+}
+
+strong {
+  text-shadow: 1px 1px 5px black;
+  color: #d26f2d;
+  font-size: 20px;
+}
+
+form {
+  padding: 35px;
+}
+
+.Smurf {
+  background: transparent;
+  max-height: 400px;
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 2px;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 3px 6px lightcoral, 0 3px 6px lightcoral;
 }
