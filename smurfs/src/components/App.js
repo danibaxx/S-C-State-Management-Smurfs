@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route } from 'react-router-dom';
+
+// context
+import { SmurfContext } from "./context/SmurfContext";
 
 // components
 import Header from './Header';
@@ -10,14 +13,17 @@ import SmurfForm from "./SmurfForm";
 import "./App.css";
 
 const App = () => {
+  const [smurfs] = useState();
 
   return (
-    <div className="App">
-      <Nav />
-      <Header />
-      <Route exact path='/smurfs' component={Smurf} />
-      <Route exact path='/addsmurf' component={SmurfForm} />
-    </div>
+    <SmurfContext.Provider value={smurfs}>
+      <div className="App">
+        <Nav />
+        <Header />
+        <Route exact path='/smurfs' component={Smurf} />
+        <Route exact path='/addsmurf' component={SmurfForm} />
+      </div>
+    </SmurfContext.Provider>
   );
 }
 
