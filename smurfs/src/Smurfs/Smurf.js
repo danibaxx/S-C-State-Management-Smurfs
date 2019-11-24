@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import Smurfs from './Smurfs';
 
 // context
 import { SmurfContext } from '../context/SmurfContext';

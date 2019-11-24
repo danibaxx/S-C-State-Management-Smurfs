@@ -1,39 +1,40 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useContext } from 'react';
+import { AddSmurfContext } from '../context/AddSmurfContext';
 
 export default function SmurfForm() {
-  const [smurf, setSmurf] = useState({
-    name: '',
-    age: '',
-    height: '',
-    id: ''
-  })
+  const {smurf, handleChange, handleSubmit} = useContext(AddSmurfContext);
+  // const [smurf, setSmurf] = useState({
+  //   name: '',
+  //   age: '',
+  //   height: '',
+  //   id: ''
+  // })
   // console.log('SMURF FORM', smurf)
 
-  const handleChange = e => {
-    setSmurf({
-      ...smurf,
-      [e.target.name]: e.target.value
-    })
-  }
+  // const handleChange = e => {
+  //   setSmurf({
+  //     ...smurf,
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  // const handleSubmit = e => {
+  //   e.preventDefault()
 
-    axios
-      .post('http://localhost:3333/smurfs', smurf)
-      .then(result => {
-        setSmurf({
-          name: '',
-          age: '',
-          height: ''
-        })
-        console.log('Smurf has been added', result.data)  
-      })
-      .catch(error => {
-        console.log('POST ERROR', error)
-      })
-  }
+  //   axios
+  //     .post('http://localhost:3333/smurfs', smurf)
+  //     .then(result => {
+  //       setSmurf({
+  //         name: '',
+  //         age: '',
+  //         height: ''
+  //       })
+  //       console.log('Smurf has been added', result.data)  
+  //     })
+  //     .catch(error => {
+  //       console.log('POST ERROR', error)
+  //     })
+  // }
 
   return (
     <div>
