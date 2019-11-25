@@ -99,8 +99,6 @@ strong {
   background: transparent;
   max-height: 462px;
   width: 550px;
-  display: flex;
-  flex-direction: column;
   border-radius: 2px;
   margin: 2rem;
   padding: 3rem;
