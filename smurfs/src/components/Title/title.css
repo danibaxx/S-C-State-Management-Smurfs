@@ -1,0 +1,28 @@
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+.nav-wrap {
+  display: flex;
+}
+
+a:link {
+  text-decoration: none;
+  background: palevioletred;
+  color: ghostwhite;
+  font-size: medium;
+  text-align: center;
+  padding: 12px 28px;
+  margin: 10px;
+  border-radius: 8%;
+}
+
+a:visited {
+  text-decoration: none;
+  background: palevioletred;
+  color: ghostwhite;
+  font-size: larger;
+  text-align: center;
+}

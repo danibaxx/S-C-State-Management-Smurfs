@@ -10,7 +10,7 @@ export default function Smurf() {
   return (
     <div className="smurf">
       {smurfs.map(smurf => (
-        <div className={smurf.id}>
+        <div className="smurf-card" key={smurf.id}>
           <h3>{smurf.name} Smurf</h3>
           <strong>{smurf.height} tall</strong>
           <p>{smurf.age} smurf years old</p>

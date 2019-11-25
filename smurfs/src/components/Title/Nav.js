@@ -1,19 +1,27 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import styled from 'styled-components';
+
+// styling
+import './title.css';
 
 export default function Nav() {
   return (
-    <div>
-      <button>
-        <NavLink to='/'>Home</NavLink>
-        </button>
-        <button>
-        <NavLink to='/smurfs'>Smurfs</NavLink>
-        </button>
-        <button>
-        <NavLink to='/addsmurf'>Add Smurfs</NavLink>
-        </button>
+    <div className='nav-wrap'>
+        <NavLink 
+          to='/'
+        >
+          Home
+        </NavLink>
+        <NavLink 
+          to='/smurfs'
+        >
+          Smurfs
+        </NavLink>
+        <NavLink 
+          to='/addsmurf'
+        >
+          Add Smurfs
+        </NavLink>
     </div>
   )
 }

@@ -1,8 +1,15 @@
 import React, { useContext } from 'react';
+import { Form, FormGroup, Input, Button } from 'reactstrap'; 
+
+// context
 import { AddSmurfContext } from '../context/AddSmurfContext';
+
+// styling
+import './smurf.css';
 
 export default function SmurfForm() {
   const {smurf, handleChange, handleSubmit} = useContext(AddSmurfContext);
+  // Moved to App.js for context API rendering/passing of data
   // const [smurf, setSmurf] = useState({
   //   name: '',
   //   age: '',
@@ -36,34 +43,49 @@ export default function SmurfForm() {
   //     })
   // }
 
-  return (
-    <div>
-      <h1>Add Smurf:</h1>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={smurf.name}
-          onChange={handleChange}
-        />
-        <input 
-          type="number"
-          name="age"
-          placeholder="Age"
-          value={smurf.age}
-          onChange={handleChange}
-        />
-        <input 
-          type="text"
-          name="height"
-          placeholder="Height"
-          value={smurf.height}
-          onChange={handleChange}
-        />
 
-        <button type="submit">Add</button>
-      </form>
+  return (
+    <div className='smurf-form'>
+      <h1>Add Smurf:</h1>
+      <Form onSubmit={handleSubmit}>
+        <FormGroup>
+          <Input 
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={smurf.name}
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Input
+            type="number"
+            name="age"
+            value={smurf.age}
+            placeholder="Age"
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Input 
+            type="text"
+            name="height"
+            placeholder="Height"
+            value={smurf.height}
+            onChange={handleChange}
+          />
+        </FormGroup>
+
+        {/* add onclick functionality to move to /smurfs */}
+        {/* searched for about an hour, couldn't find what would work :( */}
+        <Button 
+          color="primary" 
+          size="lg"
+          type="submit"
+        >
+            Add
+        </Button>
+      </Form>
       
     </div>
   )
