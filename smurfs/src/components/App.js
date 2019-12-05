@@ -20,22 +20,35 @@ const App = () => {
   // adding new smurfs to state
   const [smurf, setSmurf] = useState({
     name: '',
-    age: '',
+    age: null,
     height: '',
     id: ''
   })
 
-  // axios call for getting smurfs to render
-  useEffect(() => {
+  function getSmurf() {
     axios
     .get('http://localhost:3333/smurfs')
     .then(result => {
       setSmurfs(result.data)
-      console.log('useEffect', result.data)
+      // console.log('useEffect', result.data)
     })
     .catch(error => {
       console.log("GET ERROR", error)
     })
+  }
+
+  // axios call for getting smurfs to render
+  useEffect(() => {
+    getSmurf();
+    // axios
+    // .get('http://localhost:3333/smurfs')
+    // .then(result => {
+    //   setSmurfs(result.data)
+    //   // console.log('useEffect', result.data)
+    // })
+    // .catch(error => {
+    //   console.log("GET ERROR", error)
+    // })
   }, [])
 
   const handleChange = e => {
@@ -51,11 +64,7 @@ const App = () => {
     axios
       .post('http://localhost:3333/smurfs', smurf)
       .then(result => {
-        setSmurf({
-          name: '',
-          age: '',
-          height: ''
-        })
+        setSmurfs(result.data)
         console.log('Smurf has been added', result.data)  
       })
       .catch(error => {
