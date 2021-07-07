@@ -1,28 +1,111 @@
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* After Reset - my CSS */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+  height: 850px;
+  width: 100%;
+  background-image: url('../bg_sm_vill.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+/* 
+.links h3 {
+  display: flex;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 35px;
+} */
+
+h1 {
+  text-shadow: 1px 1px 5px black;
+  color: palevioletred;
+  font-size: 60px;
+}
+
+h3 {
+  color: coral;;
+  text-shadow: 1px 1px 5px black;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+p {
+  text-shadow: 1px 1px 5px black;
+  color: sandybrown;
+  font-size: 27px;
+}
+
+strong {
+  text-shadow: 1px 1px 5px black;
+  color: sandybrown;
+  font-size: 20px;
+}
+
+.smurf-card {
+  background: transparent;
+  max-height: 462px;
+  width: 550px;
+  border-radius: 2px;
+  margin: 2rem;
+  padding: 3rem;
+  box-shadow: 0 3px 6px ghostwhite, 0 3px 6px ghostwhite;
+}
+
+.smurf {
+  display: flex;
+  justify-content: space-evenly;
 }

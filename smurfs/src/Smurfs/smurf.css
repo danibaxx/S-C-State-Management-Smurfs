@@ -1,0 +1,8 @@
+.smurf-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form {
+  width: 35%;
+}
